@@ -4,12 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PeliculasAPI.DTOs
 {
-    public class ActorCreateDTO
+    public class ActorCreateDTO : ActorPatchDTO
     {
-        [Required]
-        [StringLength(120)]
-        public string Name { get; set; }
-        public DateTime BirthDate { get; set; }
         [WeightFileValidation(weightMaxInMegaBytes: 4)]
         [TypeFileValidation(groupTypeFile: GroupTypeFile.Image)]
         public IFormFile Photo { get; set; }
